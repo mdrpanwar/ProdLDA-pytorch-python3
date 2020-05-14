@@ -41,20 +41,20 @@ def to_onehot(data, min_length):
 def make_data():
     global data_tr, data_te, tensor_tr, tensor_te, vocab, vocab_size
     dataset_tr = 'data/20news_clean/train.txt.npy'
-    data_tr = np.load(dataset_tr)
+    data_tr = np.load(dataset_tr,encoding='bytes')
     dataset_te = 'data/20news_clean/test.txt.npy'
-    data_te = np.load(dataset_te)
+    data_te = np.load(dataset_te,encoding='bytes')
     vocab = 'data/20news_clean/vocab.pkl'
-    vocab = pickle.load(open(vocab,'r'))
+    vocab = pickle.load(open(vocab,'rb'))
     vocab_size=len(vocab)
     #--------------convert to one-hot representation------------------
-    print 'Converting data to one-hot representation'
+    print('Converting data to one-hot representation')
     data_tr = np.array([to_onehot(doc.astype('int'),vocab_size) for doc in data_tr if np.sum(doc)!=0])
     data_te = np.array([to_onehot(doc.astype('int'),vocab_size) for doc in data_te if np.sum(doc)!=0])
     #--------------print the data dimentions--------------------------
-    print 'Data Loaded'
-    print 'Dim Training Data',data_tr.shape
-    print 'Dim Test Data',data_te.shape
+    print('Data Loaded')
+    print('Dim Training Data',data_tr.shape)
+    print('Dim Test Data',data_te.shape)
     #--------------make tensor datasets-------------------------------
     tensor_tr = torch.from_numpy(data_tr).float()
     tensor_te = torch.from_numpy(data_te).float()
@@ -80,7 +80,7 @@ def make_optimizer():
         assert False, 'Unknown optimizer {}'.format(args.optimizer)
 
 def train():
-    for epoch in xrange(args.num_epoch):
+    for epoch in range(args.num_epoch):
         all_indices = torch.randperm(tensor_tr.size(0)).split(args.batch_size)
         loss_epoch = 0.0
         model.train()                   # switch to training mode
@@ -111,7 +111,7 @@ associations = {
 }
 def identify_topic_in_line(line):
     topics = []
-    for topic, keywords in associations.iteritems():
+    for topic, keywords in associations.items():
         for word in keywords:
             if word in line:
                 topics.append(topic)
@@ -119,14 +119,14 @@ def identify_topic_in_line(line):
     return topics
 
 def print_top_words(beta, feature_names, n_top_words=10):
-    print '---------------Printing the Topics------------------'
+    print('---------------Printing the Topics------------------')
     for i in range(len(beta)):
         line = " ".join([feature_names[j] 
                             for j in beta[i].argsort()[:-n_top_words - 1:-1]])
         topics = identify_topic_in_line(line)
         print('|'.join(topics))
         print('     {}'.format(line))
-    print '---------------End of Topics------------------'
+    print('---------------End of Topics------------------')
 
 def print_perp(model):
     cost=[]
@@ -152,7 +152,7 @@ if __name__=='__main__' and args.start:
     make_optimizer()
     train()
     emb = model.decoder.weight.data.cpu().numpy().T
-    print_top_words(emb, zip(*sorted(vocab.items(), key=lambda x:x[1]))[0])
+    print_top_words(emb, list(zip(*sorted(vocab.items(), key=lambda x:x[1])))[0])
     print_perp(model)
     visualize()
 

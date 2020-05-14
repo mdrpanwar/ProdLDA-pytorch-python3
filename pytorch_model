@@ -1,0 +1,104 @@
+digraph {
+	140283718769040 [label="[10, 1995]" fillcolor=lightblue shape=ellipse style=filled]
+	140283740936680 [label="[100, 1995]" fillcolor=red shape=ellipse style=filled]
+	140283740936768 [label="[100]" fillcolor=red shape=ellipse style=filled]
+	140283718769832 [label="[10, 100]" fillcolor=lightblue shape=ellipse style=filled]
+	140283718769656 [label="[10, 100]" fillcolor=lightblue shape=ellipse style=filled]
+	140283740936856 [label="[100, 100]" fillcolor=red shape=ellipse style=filled]
+	140283740936944 [label="[100]" fillcolor=red shape=ellipse style=filled]
+	140283718769744 [label="[10, 100]" fillcolor=lightblue shape=ellipse style=filled]
+	140283740937912 [label="[10, 100]" fillcolor=lightblue shape=ellipse style=filled]
+	140283740937208 [label="[10, 100]" fillcolor=lightblue shape=ellipse style=filled]
+	140283740937032 [label="[50, 100]" fillcolor=red shape=ellipse style=filled]
+	140283740937120 [label="[50]" fillcolor=red shape=ellipse style=filled]
+	140283718742704 [label="[10, 50]" fillcolor=lightblue shape=ellipse style=filled]
+	140283740937296 [label="[50]" fillcolor=red shape=ellipse style=filled]
+	140283718743144 [label="[10, 50]" fillcolor=lightblue shape=ellipse style=filled]
+	140283740937384 [label="[50, 100]" fillcolor=red shape=ellipse style=filled]
+	140283740937472 [label="[50]" fillcolor=red shape=ellipse style=filled]
+	140283718743056 [label="[10, 50]" fillcolor=lightblue shape=ellipse style=filled]
+	140283740937648 [label="[50]" fillcolor=red shape=ellipse style=filled]
+	140283718743760 [label="[10, 50]" fillcolor=lightblue shape=ellipse style=filled]
+	140283718744728 [label="[10, 50]" fillcolor=lightblue shape=ellipse style=filled]
+	140283718743672 [label="[10, 50]" fillcolor=lightblue shape=ellipse style=filled]
+	140283718743584 [label="[10, 50]" fillcolor=lightblue shape=ellipse style=filled]
+	140283718770096 [label="[10, 50]" fillcolor=lightblue shape=ellipse style=filled]
+	140283718743496 [label="[10, 50]" fillcolor=lightblue shape=ellipse style=filled]
+	140283718743936 [label="[10, 50]" fillcolor=lightblue shape=ellipse style=filled]
+	140283718744112 [label="[10, 50]" fillcolor=lightblue shape=ellipse style=filled]
+	140283740937736 [label="[1995, 50]" fillcolor=red shape=ellipse style=filled]
+	140283740937824 [label="[1995]" fillcolor=red shape=ellipse style=filled]
+	140283718744640 [label="[10, 1995]" fillcolor=lightblue shape=ellipse style=filled]
+	140283740938000 [label="[1995]" fillcolor=red shape=ellipse style=filled]
+	140283718744464 [label="[10, 1995]" fillcolor=lightblue shape=ellipse style=filled]
+	140283718744552 [label="[10, 1995]" fillcolor=lightblue shape=ellipse style=filled]
+	140283741370856 [label=Linear fillcolor=orange shape=rectangle style=filled]
+	140283741371752 [label=Softplus fillcolor=orange shape=rectangle style=filled]
+	140283741370408 [label=Linear fillcolor=orange shape=rectangle style=filled]
+	140283741371976 [label=Softplus fillcolor=orange shape=rectangle style=filled]
+	140283741371080 [label=Dropout fillcolor=orange shape=rectangle style=filled]
+	140283741372200 [label=Linear fillcolor=orange shape=rectangle style=filled]
+	140283718404248 [label=BatchNorm1d fillcolor=orange shape=rectangle style=filled]
+	140283741371304 [label=Linear fillcolor=orange shape=rectangle style=filled]
+	140283718404360 [label=BatchNorm1d fillcolor=orange shape=rectangle style=filled]
+	140283741371528 [label=Exp fillcolor=orange shape=rectangle style=filled]
+	140283741369960 [label=Sqrt fillcolor=orange shape=rectangle style=filled]
+	140283741370632 [label=Mul fillcolor=orange shape=rectangle style=filled]
+	140283741370184 [label=Add fillcolor=orange shape=rectangle style=filled]
+	140283687817288 [label=Softmax fillcolor=orange shape=rectangle style=filled]
+	140283687817512 [label=Dropout fillcolor=orange shape=rectangle style=filled]
+	140283687817736 [label=Linear fillcolor=orange shape=rectangle style=filled]
+	140283718404528 [label=BatchNorm1d fillcolor=orange shape=rectangle style=filled]
+	140283687817960 [label=Softmax fillcolor=orange shape=rectangle style=filled]
+	140283718769040 -> 140283741370856
+	140283740936680 -> 140283741370856
+	140283740936768 -> 140283741370856
+	140283718769832 -> 140283741371752
+	140283718769656 -> 140283741370408
+	140283740936856 -> 140283741370408
+	140283740936944 -> 140283741370408
+	140283718769744 -> 140283741371976
+	140283740937912 -> 140283741371080
+	140283740937208 -> 140283741372200
+	140283740937032 -> 140283741372200
+	140283740937120 -> 140283741372200
+	140283718742704 -> 140283718404248
+	140283740937296 -> 140283718404248
+	140283740937208 -> 140283741371304
+	140283740937384 -> 140283741371304
+	140283740937472 -> 140283741371304
+	140283718743056 -> 140283718404360
+	140283740937648 -> 140283718404360
+	140283718743760 -> 140283741371528
+	140283718744728 -> 140283741369960
+	140283718743672 -> 140283741370632
+	140283718743584 -> 140283741370632
+	140283718743144 -> 140283741370184
+	140283718770096 -> 140283741370184
+	140283718743496 -> 140283687817288
+	140283718743936 -> 140283687817512
+	140283718744112 -> 140283687817736
+	140283740937736 -> 140283687817736
+	140283740937824 -> 140283687817736
+	140283718744640 -> 140283718404528
+	140283740938000 -> 140283718404528
+	140283718744464 -> 140283687817960
+	140283741370856 -> 140283718769832
+	140283741371752 -> 140283718769656
+	140283741370408 -> 140283718769744
+	140283741371976 -> 140283740937912
+	140283741371080 -> 140283740937208
+	140283741372200 -> 140283718742704
+	140283718404248 -> 140283718743144
+	140283741371304 -> 140283718743056
+	140283718404360 -> 140283718743760
+	140283741371528 -> 140283718744728
+	140283741369960 -> 140283718743672
+	140283741370632 -> 140283718770096
+	140283741370184 -> 140283718743496
+	140283687817288 -> 140283718743936
+	140283687817512 -> 140283718744112
+	140283687817736 -> 140283718744640
+	140283718404528 -> 140283718744464
+	140283687817960 -> 140283718744552
+}

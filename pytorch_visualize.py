@@ -104,7 +104,7 @@ def save_visualization(name, format='svg'):
         size = [int(i) for i in list(var.size())]
         return str(size)
     # add variable nodes
-    for vid, var in vars.iteritems():
+    for vid, var in vars.items():
         if isinstance(var, nn.Parameter):
             g.node(str(vid), label=sizestr(var), shape='ellipse', style='filled', fillcolor='red')
         elif isinstance(var, Variable):
